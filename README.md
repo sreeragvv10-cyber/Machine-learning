@@ -1,153 +1,68 @@
-🏡 Housing Price Prediction Using Machine Learning
-📌 Overview
-This project focuses on analyzing and predicting house prices using Machine Learning techniques.
+# 🏠 House Price Prediction Using Machine Learning
 
-The California Housing Dataset is used to explore different factors affecting house prices, such as median income, geographical location, housing age, population, and ocean proximity.
+## 📌 Project Overview
 
-The project uses Python for data cleaning, Exploratory Data Analysis (EDA), data visualization, preprocessing, and Machine Learning model development.
+This project focuses on predicting house prices using Machine Learning techniques and the California Housing Dataset.
 
-A Linear Regression algorithm is implemented to predict median house values.
+The project uses Python and Scikit-learn to build a Linear Regression model that predicts median house values based on different housing features such as location, income, number of rooms, bedrooms, population, and housing age.
 
-🎯 Objectives
-Understand and analyze the California Housing Dataset.
-Identify important factors influencing house prices.
-Perform data cleaning and handle missing values.
-Conduct Exploratory Data Analysis (EDA).
-Visualize relationships between housing features.
-Apply categorical encoding and feature scaling.
-Build a Machine Learning model using Linear Regression.
-Predict median house prices.
-Evaluate model performance using regression metrics.
-📊 Dataset Information
-Dataset: California Housing Dataset
+The main objective is to develop a machine learning model that can estimate house prices and evaluate its performance using standard regression metrics.
 
-Total Records: 20,640
-Original Columns: 10
-Target Variable: median_house_value
-Dataset Features
-Feature	Description
-longitude	Geographic longitude
-latitude	Geographic latitude
-housing_median_age	Median age of houses
-total_rooms	Total number of rooms
-total_bedrooms	Total number of bedrooms
-population	Population of the area
-households	Number of households
-median_income	Median income
-median_house_value	Median house value (Target)
-ocean_proximity	Proximity to the ocean
-🛠️ Technologies Used
-Python
-Jupyter Notebook
-Pandas
-NumPy
-Matplotlib
-Seaborn
-Scikit-learn
-⚙️ Workflow
-1. Data Understanding
-Loaded the California Housing Dataset.
-Examined dataset structure and dimensions.
-Identified numerical and categorical features.
-Generated descriptive statistics.
-2. Data Cleaning
-Checked for missing values.
-Handled missing values in total_bedrooms using median imputation.
-Checked duplicate records.
-3. Exploratory Data Analysis (EDA)
-Performed statistical analysis and data visualization to understand:
+## 🎯 Project Objectives
 
-Distribution of house prices.
-Relationship between median income and house prices.
-Ocean proximity and average house prices.
-House price distribution by ocean proximity.
-Correlation between numerical variables.
-Geographical distribution of house prices.
-4. Data Preprocessing
-Separated independent and dependent variables.
-Applied One-Hot Encoding to the ocean_proximity column.
-Applied StandardScaler for feature scaling.
-Prepared the dataset for Machine Learning.
-After encoding, the dataset contained 13 features.
+- Analyze the California Housing Dataset.
+- Perform data cleaning and preprocessing.
+- Handle missing values.
+- Explore relationships between housing features.
+- Build a Machine Learning model using Linear Regression.
+- Predict median house values.
+- Evaluate model performance using regression metrics.
+- Compare actual and predicted house prices.
 
-5. Train-Test Split
-The dataset was divided into:
+## 📂 Dataset Information
 
-Training Data: 80% (16,512 records)
-Testing Data: 20% (4,128 records)
-The random_state=42 parameter was used for reproducibility.
+**Dataset:** California Housing Dataset
 
-6. Machine Learning Model
-Algorithm: Linear Regression
+- Total Records: 20,640
+- Total Features: 10
+- Missing Values: 207 (in `total_bedrooms`)
+- Duplicate Records: 0
 
-The model was trained using the training dataset and used to predict median house prices on the testing dataset.
+### Dataset Features
 
-7. Model Evaluation
-The model was evaluated using:
+| Feature | Description |
+|---|---|
+| longitude | Longitude of the location |
+| latitude | Latitude of the location |
+| housing_median_age | Median age of houses |
+| total_rooms | Total number of rooms |
+| total_bedrooms | Total number of bedrooms |
+| population | Population of the area |
+| households | Number of households |
+| median_income | Median income of the area |
+| median_house_value | Median house value (Target) |
+| ocean_proximity | Distance/location relative to the ocean |
 
-Mean Absolute Error (MAE)
-Mean Squared Error (MSE)
-Root Mean Squared Error (RMSE)
-R² Score
-📈 Model Performance
-The Linear Regression model achieved the following results:
+## 🛠️ Technologies & Libraries Used
 
-Evaluation Metric	Result
-MAE	50,670.74
-MSE	4,908,476,721.16
-RMSE	70,060.52
-R² Score	0.6254
-Model Interpretation:
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Joblib
+- Jupyter Notebook
 
-The model achieved an R² score of approximately 62.54%, meaning it explains 62.54% of the variation in median house prices in the testing dataset.
+## 🧹 Data Cleaning & Preprocessing
 
-🔍 Key Findings
-Median income has a strong positive correlation (0.688) with median house value.
-House prices generally increase as median income increases.
-Inland areas have lower average house prices compared to coastal areas.
-Island locations show the highest average house prices, but the category contains only five records.
-Total rooms and total bedrooms have a strong positive correlation (0.927).
-Population and households have a strong positive correlation (0.907).
-Population and median house value have a very weak negative correlation (-0.025).
-Geographical location plays an important role in house price variations.
-The dataset contains a noticeable concentration of house values at the $500,001 upper limit.
-📉 Actual vs Predicted Prices
-The project compares actual house prices with predicted house prices using visualizations.
+The following preprocessing steps were performed:
 
-The comparison helps understand:
-
-How accurately the model predicts house prices.
-Differences between actual and predicted values.
-The general prediction trend.
-Outliers and prediction errors.
-⚠️ Project Limitations
-The dataset contains limited information about housing features.
-Linear Regression may not capture complex relationships between variables.
-Some factors affecting house prices are not included.
-Outliers may affect prediction accuracy.
-The model achieved an R² score of 62.54%, so some price variations remain unexplained.
-💡 Conclusion
-This project demonstrates how Machine Learning can be used to analyze housing data and predict house prices.
-
-Through Exploratory Data Analysis, important relationships were identified between median income, geographical location, ocean proximity, and house prices.
-
-A Linear Regression model was developed and achieved an R² score of 0.6254 (62.54%).
-
-Overall, this project helped develop practical knowledge of Python, data cleaning, data visualization, feature engineering, Machine Learning, and model evaluation.
-
-🚀 How to Run This Project
-1. Clone the Repository
-git clone https://github.com/your-username/Housing-Price-Prediction.git
-2. Navigate to the Project Folder
-cd Housing-Price-Prediction
-3. Install Required Libraries
-pip install pandas numpy matplotlib seaborn scikit-learn jupyter
-4. Start Jupyter Notebook
-jupyter notebook
-5. Run the Notebook
-Open machine learning .ipynb and execute the cells.
-
-Aspiring Data Analyst | Machine Learning Enthusiast
-
-⭐ Acknowledgement
-This project was completed as part of my learning journey in Data Analytics and Machine Learning.
+1. Imported the dataset using Pandas.
+2. Explored the dataset using `head()`, `tail()`, `info()`, and `describe()`.
+3. Checked for missing values.
+4. Checked for duplicate records.
+5. Handled missing values in `total_bedrooms` using median imputation.
+6. Visualized house price distribution.
+7. Created a correlation heatmap.
+8. Separated independent variables (X) and dependent variable (y).
